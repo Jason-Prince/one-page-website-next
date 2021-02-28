@@ -1,9 +1,13 @@
 @import "normalize";
 @import url("https://fonts.googleapis.com/css2?family=Carme&family=Montserrat&display=swap");
 
+:root {
+  font-size: 10px;
+}
+
 // font-family:
-$Title--font-family: "Carme", sans-serif;
-$Text--font-family: "Montserrat", sans-serif;
+$Title: "Carme", sans-serif;
+$Text: "Montserrat", sans-serif;
 
 // colors
 $Primary: #e6e6e6;
@@ -17,3 +21,156 @@ $S-Light: #73b1d6;
 $Accent: #287a6b;
 $A-Dark: #004d40;
 $A-Light: #5baa99;
+
+.link {
+  color: $P-Dark;
+  text-decoration: none;
+}
+
+.container {
+  font-family: $Text;
+  background-color: $P-Light;
+  overflow: hidden;
+  margin: 0px 20px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  place-content: center;
+
+  .header {
+    grid-area: 1 / 1 / 2 / 2;
+    position: relative;
+    top: 20px;
+    z-index: 10;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+
+    .logo {
+      grid-column-start: 1;
+
+      width: 25rem;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      background-color: $Primary;
+
+      display: grid;
+      place-content: center;
+
+      .link {
+        display: grid;
+        place-content: center;
+
+        .svg {
+          display: grid;
+          place-content: center;
+
+          .fill-1 {
+            fill: $P-Dark;
+          }
+
+          .fill-2 {
+            fill: $Secondary;
+          }
+
+          .fill-3 {
+            fill: $Accent;
+          }
+        }
+      }
+    }
+    .nav {
+      grid-column-end: -1;
+
+      font-size: 1.7rem;
+
+      display: grid;
+      grid-auto-columns: auto;
+      grid-template-rows: 4rem;
+      justify-content: end;
+      column-gap: 2rem;
+
+      .about-me {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        background-color: $Primary;
+
+        display: grid;
+        place-content: center;
+      }
+
+      .my-projects {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        background-color: $Primary;
+
+        display: grid;
+        place-content: center;
+      }
+
+      .testimonials {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 1;
+
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        background-color: $Primary;
+
+        display: grid;
+        place-content: center;
+      }
+
+      .learn-more {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        grid-row-start: 1;
+
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        background-color: $Primary;
+
+        display: grid;
+        place-content: center;
+      }
+    }
+  }
+
+  .hero {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .clients {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .about-me {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+
+  .my-projects {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+
+  .testimonials {
+    grid-area: 5 / 1 / 6 / 2;
+  }
+
+  .contact-me {
+    grid-area: 6 / 1 / 7 / 2;
+  }
+
+  .footer {
+    grid-area: 7 / 1 / 8 / 2;
+  }
+}
