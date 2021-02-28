@@ -125,11 +125,24 @@ export default function Home() {
         </div>
 
         <div className="hero">Hero</div>
-        <div className="clients">Clients</div>
-        <div className="about-me">About Me</div>
-        <div className="my-projects">My Projects</div>
-        <div className="testimonials">Testimonials</div>
-        <div className="contact-me">Contact Me</div>
+        <div className="clients">
+          <div className="title">Clients</div>
+        </div>
+        <div className="about-me">
+          <div className="title">About Me</div>
+        </div>
+        <div className="my-projects">
+          <div className="title">My Projects</div>
+        </div>
+        <div className="testimonials">
+          <div className="title">Testimonials</div>
+        </div>
+        <div className="learn-more">
+          <div className="title">Learn More</div>
+        </div>
+        <div className="contact-me">
+          <div className="title">Contact Me</div>
+        </div>
         <div className="footer">Footer</div>
       </div>
     </div>
