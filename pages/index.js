@@ -101,22 +101,22 @@ export default function Home() {
             </a>
           </div>
           <div className="nav">
-            <div className="about-me">
+            <div className="nav__about-me">
               <a href="#" className="link">
                 About Me
               </a>
             </div>
-            <div className="my-projects">
+            <div className="nav__my-projects">
               <a href="#" className="link">
                 My Projects
               </a>
             </div>
-            <div className="testimonials">
+            <div className="nav__testimonials">
               <a href="#" className="link">
                 Testimonials
               </a>
             </div>
-            <div className="learn-more">
+            <div className="nav__learn-more">
               <a href="#" className="link">
                 Learn More
               </a>
@@ -139,6 +139,14 @@ export default function Home() {
         </div>
         <div className="learn-more">
           <div className="title">Learn More</div>
+          <iframe
+            src="https://indd.adobe.com/view/c5c10c18-1305-44bc-8478-51c606f23b69"
+            className="zero-net-energy"
+          ></iframe>
+          <iframe
+            src="https://indd.adobe.com/view/c01cd1a7-379e-4bce-8a53-b3c7bfed306e"
+            className="zero-net-energy"
+          ></iframe>
         </div>
         <div className="contact-me">
           <div className="title">Contact Me</div>
