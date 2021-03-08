@@ -24,40 +24,57 @@ $Accent: #287a6b;
 $A-Dark: #004d40;
 $A-Light: #5baa99;
 
-.link {
-  color: $P-Dark;
-  text-decoration: none;
+body {
+  margin: 0;
 }
 
-.container {
+// Container
+._ {
   font-family: $Text;
   background-color: $P-Light;
   overflow: hidden;
-  margin: 0px 20px;
+  justify-items: center;
+  height: 100vh;
 
   display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: 1fr;
-  justify-items: center;
+  grid-template-columns: minmax(915px, 1fr);
+  grid-auto-rows: auto repeat(8, 1fr);
+  grid-template-areas:
+    "_row-0"
+    "_row-1"
+    "_row-2"
+    "_row-3"
+    "_row-4"
+    "_row-5"
+    "_row-6"
+    "_row-7"
+    "_row-8";
+  position: relative;
+  overflow: auto;
 
-  .header {
-    grid-area: 1 / 1 / 2 / 2;
-    position: relative;
+  // Header
+  ._row-0 {
+    grid-area: _row-0;
+    // grid-area: 1 / 1 / 2 / 2;
+    position: sticky;
     top: 20px;
     z-index: 10;
 
     width: 100%;
 
     display: grid;
-    grid-template-columns: minmax(280px, 1fr) 1fr;
+    grid-template-columns: 280px 600px;
     grid-auto-rows: 50px;
+    grid-template-areas: "row-1_col-1 row-1_col-2";
+    column-gap: 20px;
+    justify-content: space-between;
 
-    .logo {
-      grid-column-start: 1;
+    // Logo
+    ._row-0_col-1 {
+      grid-area: row-1_col-1;
 
-      width: 25rem;
       padding: 0.5rem 1.5rem;
-      margin-left: 3rem;
+      margin-left: 30px;
       border-radius: 50px;
       background-color: $Primary;
       box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
@@ -66,100 +83,109 @@ $A-Light: #5baa99;
       display: grid;
       place-content: center;
 
-      .link {
+      ._row-0_col-1--link {
+        color: $P-Dark;
+        text-decoration: none;
+
         display: grid;
         place-content: center;
 
-        .svg {
-          display: grid;
-          place-content: center;
-
-          .fill-1 {
+        ._row-0_col-1--link_svg {
+          ._row-0_col-1--link_svg_color-primary {
             fill: $P-Dark;
           }
 
-          .fill-2 {
+          ._row-0_col-1--link_svg_color-secondary {
             fill: $Secondary;
           }
 
-          .fill-3 {
+          ._row-0_col-1--link_svg_color-accent {
             fill: $Accent;
           }
         }
       }
     }
-    .nav {
-      grid-column-end: 3;
+    // Nav
+    ._row-0_col-2 {
+      grid-area: row-1_col-2;
 
       font-size: 1.7rem;
-      margin-right: 3rem;
+      margin-right: 30px;
 
       display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 50px;
-      column-gap: 2rem;
+      grid-template-columns: auto;
+      grid-template-areas: "col-1 col-2 col-3 col-4";
+      place-items: center;
       justify-items: end;
 
-      &__about-me {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 1;
+      // About Me
+      ._row-0_col-2--item-1 {
+        grid-area: col-1;
 
-        width: 85px;
         padding: 0.5rem 1.5rem;
         border-radius: 50px;
         background-color: $Primary;
         box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
           0 15px 12px rgba(0, 0, 0, 0.22);
+
+        ._row-0_col-2--item-1_link {
+          color: $P-Dark;
+          text-decoration: none;
+        }
+      }
+
+      // My Projects
+      ._row-0_col-2--item-2 {
+        grid-area: col-2;
+
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        background-color: $Primary;
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+          0 15px 12px rgba(0, 0, 0, 0.22);
+
+        ._row-0_col-2--item-2_link {
+          color: $P-Dark;
+          text-decoration: none;
+        }
 
         display: grid;
         place-content: center;
       }
 
-      &__my-projects {
-        grid-column-start: 2;
-        grid-column-end: 3;
-        grid-row-start: 1;
+      // Testimonials
+      ._row-0_col-2--item-3 {
+        grid-area: col-3;
 
-        width: 100px;
         padding: 0.5rem 1.5rem;
         border-radius: 50px;
         background-color: $Primary;
         box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
           0 15px 12px rgba(0, 0, 0, 0.22);
+
+        ._row-0_col-2--item-3_link {
+          color: $P-Dark;
+          text-decoration: none;
+        }
 
         display: grid;
         place-content: center;
       }
 
-      &__testimonials {
-        grid-column-start: 3;
-        grid-column-end: 4;
-        grid-row-start: 1;
+      // Learn More
+      ._row-0_col-2--item-4 {
+        grid-area: col-4;
 
-        width: 100px;
         padding: 0.5rem 1.5rem;
         border-radius: 50px;
         background-color: $Primary;
         box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
           0 15px 12px rgba(0, 0, 0, 0.22);
 
-        display: grid;
-        place-content: center;
-      }
-
-      &__learn-more {
-        grid-column-start: 4;
-        grid-column-end: 5;
-        grid-row-start: 1;
-        grid-row-end: 2;
-
-        width: 100px;
-        padding: 0.5rem 1.5rem;
-        border-radius: 50px;
-        background-color: $Primary;
-        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
-          0 15px 12px rgba(0, 0, 0, 0.22);
+        ._row-0_col-2--item-4_link {
+          color: $P-Dark;
+          text-decoration: none;
+        }
 
         display: grid;
         place-content: center;
@@ -167,15 +193,16 @@ $A-Light: #5baa99;
     }
   }
 
-  .hero {
-    grid-area: 1 / 1 / 2 / 2;
+  // Hero
+  ._row-1 {
+    grid-area: _row-1;
 
     display: grid;
     grid-template-columns: 1fr;
   }
 
-  .clients {
-    grid-area: 2 / 1 / 3 / 2;
+  ._row-2 {
+    grid-area: _row-2;
 
     display: grid;
     grid-template-columns: 1fr;
@@ -186,8 +213,8 @@ $A-Light: #5baa99;
     }
   }
 
-  .about-me {
-    grid-area: 3 / 1 / 4 / 2;
+  ._row-3 {
+    grid-area: _row-3;
 
     display: grid;
     grid-template-columns: 1fr;
@@ -198,8 +225,8 @@ $A-Light: #5baa99;
     }
   }
 
-  .my-projects {
-    grid-area: 4 / 1 / 5 / 2;
+  ._row-4 {
+    grid-area: _row-4;
 
     display: grid;
     grid-template-columns: 1fr;
@@ -210,8 +237,8 @@ $A-Light: #5baa99;
     }
   }
 
-  .testimonials {
-    grid-area: 5 / 1 / 6 / 2;
+  ._row-5 {
+    grid-area: _row-5;
 
     display: grid;
     grid-template-columns: 1fr;
@@ -222,30 +249,39 @@ $A-Light: #5baa99;
     }
   }
 
-  .learn-more {
-    grid-area: 6 / 1 / 7 / 2;
+  ._row-6 {
+    grid-area: _row-6;
 
     display: grid;
-    grid-template-columns: 90vw;
-    grid-template-rows: auto 60vw 60vw;
+    grid-template-columns: minmax(855px, calc(100vw - 60px));
+    grid-template-rows: auto 70vw 70vw;
     place-items: center;
-    gap: 20px;
+    row-gap: 50px;
 
-    .title {
+    ._row-6--row-1 {
       font-size: 1.7rem;
       place-content: center;
     }
 
-    .zero-net-energy {
-      width: 90%;
+    ._row-6--row-2 {
+      width: 100%;
       height: 100%;
+      border-radius: 25px;
+      box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+        0 15px 12px rgba(0, 0, 0, 0.22);
+    }
+
+    ._row-6--row-3 {
+      width: 100%;
+      height: 100%;
+      border-radius: 25px;
       box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
         0 15px 12px rgba(0, 0, 0, 0.22);
     }
   }
 
-  .contact-me {
-    grid-area: 7 / 1 / 8 / 2;
+  ._row-7 {
+    grid-area: _row-7;
 
     display: grid;
     grid-template-columns: 1fr;
@@ -256,7 +292,7 @@ $A-Light: #5baa99;
     }
   }
 
-  .footer {
-    grid-area: 8 / 1 / 9 / 2;
+  ._row-8 {
+    grid-area: _row-8;
   }
 }
